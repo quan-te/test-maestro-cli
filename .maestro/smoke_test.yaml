@@ -1,19 +1,21 @@
 appId: com.testmaestrocli
 ---
 - launchApp
-# Wait for splash screen animation to finish
-- waitForAnimationToEnd:
-    timeout: 5000
+# Poll until splash screen dismisses and home screen renders
+- extendedWaitUntil:
+    visible:
+      text: "Welcome to"
+    timeout: 30000
 - assertVisible:
     text: "Welcome to"
 - assertVisible:
     text: "get started"
 - tapOn:
     text: "Explore"
-- waitForAnimationToEnd:
-    timeout: 3000
-- assertVisible:
-    text: "Explore"
+- extendedWaitUntil:
+    visible:
+      text: "Explore"
+    timeout: 10000
 - assertVisible:
     text: "This starter app includes example"
 - tapOn:
@@ -22,7 +24,7 @@ appId: com.testmaestrocli
     text: "This app has two screens"
 - tapOn:
     text: "Home"
-- waitForAnimationToEnd:
-    timeout: 3000
-- assertVisible:
-    text: "Welcome to"
+- extendedWaitUntil:
+    visible:
+      text: "Welcome to"
+    timeout: 10000
