@@ -1,0 +1,15 @@
+appId: com.testmaestrocli
+---
+- launchApp
+- assertVisible: "Welcome to Expo"
+- assertVisible: "get started"
+- tapOn:
+    text: "Explore"
+- assertVisible: "Explore"
+- assertVisible: "This starter app includes example"
+- tapOn:
+    text: "File-based routing"
+- assertVisible: "This app has two screens"
+- tapOn:
+    text: "Home"
+- assertVisible: "Welcome to Expo"
