@@ -1,13 +1,9 @@
 appId: com.testmaestrocli
 ---
 - launchApp
+# Wait for splash screen animation to finish
 - waitForAnimationToEnd:
-    timeout: 10000
-# Wait for JS bundle to load and splash screen to dismiss
-- extendedWaitUntil:
-    visible:
-      text: "Welcome to"
-    timeout: 15000
+    timeout: 5000
 - assertVisible:
     text: "Welcome to"
 - assertVisible:
@@ -15,7 +11,7 @@ appId: com.testmaestrocli
 - tapOn:
     text: "Explore"
 - waitForAnimationToEnd:
-    timeout: 5000
+    timeout: 3000
 - assertVisible:
     text: "Explore"
 - assertVisible:
@@ -27,6 +23,6 @@ appId: com.testmaestrocli
 - tapOn:
     text: "Home"
 - waitForAnimationToEnd:
-    timeout: 5000
+    timeout: 3000
 - assertVisible:
     text: "Welcome to"
