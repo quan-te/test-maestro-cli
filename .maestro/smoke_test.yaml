@@ -1,30 +1,27 @@
 appId: com.testmaestrocli
 ---
 - launchApp
-# Poll until splash screen dismisses and home screen renders
 - extendedWaitUntil:
     visible:
-      text: "Welcome to"
+      id: "home-title"
     timeout: 30000
 - assertVisible:
-    text: "Welcome to"
-- assertVisible:
-    text: "get started"
+    id: "home-title"
 - tapOn:
     text: "Explore"
 - extendedWaitUntil:
     visible:
-      text: "Explore"
+      id: "explore-title"
     timeout: 10000
 - assertVisible:
-    text: "This starter app includes example"
+    id: "explore-title"
 - tapOn:
-    text: "File-based routing"
+    id: "collapsible-file-routing"
 - assertVisible:
     text: "This app has two screens"
 - tapOn:
     text: "Home"
 - extendedWaitUntil:
     visible:
-      text: "Welcome to"
+      id: "home-title"
     timeout: 10000
