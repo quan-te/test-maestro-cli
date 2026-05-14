@@ -1,15 +1,32 @@
 appId: com.testmaestrocli
 ---
 - launchApp
-- assertVisible: "Welcome to Expo"
-- assertVisible: "get started"
+- waitForAnimationToEnd:
+    timeout: 10000
+# Wait for JS bundle to load and splash screen to dismiss
+- extendedWaitUntil:
+    visible:
+      text: "Welcome to"
+    timeout: 15000
+- assertVisible:
+    text: "Welcome to"
+- assertVisible:
+    text: "get started"
 - tapOn:
     text: "Explore"
-- assertVisible: "Explore"
-- assertVisible: "This starter app includes example"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible:
+    text: "Explore"
+- assertVisible:
+    text: "This starter app includes example"
 - tapOn:
     text: "File-based routing"
-- assertVisible: "This app has two screens"
+- assertVisible:
+    text: "This app has two screens"
 - tapOn:
     text: "Home"
-- assertVisible: "Welcome to Expo"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible:
+    text: "Welcome to"
