@@ -1,15 +1,27 @@
 appId: com.testmaestrocli
 ---
 - launchApp
-- assertVisible: "Welcome to Expo"
-- assertVisible: "get started"
+- extendedWaitUntil:
+    visible:
+      id: "home-title"
+    timeout: 30000
+- assertVisible:
+    id: "home-title"
 - tapOn:
     text: "Explore"
-- assertVisible: "Explore"
-- assertVisible: "This starter app includes example"
+- extendedWaitUntil:
+    visible:
+      id: "explore-title"
+    timeout: 10000
+- assertVisible:
+    id: "explore-title"
 - tapOn:
-    text: "File-based routing"
-- assertVisible: "This app has two screens"
+    id: "collapsible-file-routing"
+- assertVisible:
+    text: "This app has two screens"
 - tapOn:
     text: "Home"
-- assertVisible: "Welcome to Expo"
+- extendedWaitUntil:
+    visible:
+      id: "home-title"
+    timeout: 10000

@@ -5,8 +5,13 @@
   },
   "build": {
     "preview": {
+      "distribution": "internal",
+      "cache": {
+        "paths": ["node_modules", ".expo"]
+      },
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
       }
     },
     "production": {
